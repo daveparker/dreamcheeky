@@ -6,7 +6,7 @@ from launcher import Launcher
 launcher = Launcher(calibrate=False)
 
 class LauncherCli(cmd.Cmd):
-    """Simple command processor example."""
+    """Simple launch controller."""
     
     prompt = 'DreamCheeky> '
     def do_up(self, line):
@@ -20,6 +20,12 @@ class LauncherCli(cmd.Cmd):
     
     def do_right(self, line):
       launcher.right()
+
+    def do_center(self, line):
+      launcher.center()
+
+    def do_calibrate(self, line):
+      launcher.calibrate()
 
     def do_fire(self, line):
       launcher.fire()
