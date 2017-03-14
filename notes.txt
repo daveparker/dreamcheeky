@@ -1,0 +1,16 @@
+
+Launcher notes
+------------------------------------------
+Powered hub is needed to shoot darts (RPi will brown out otherwise)
+plugable 4-port BC 1.1 powered hub is compact and can power the Pi + turret
+
+Add the following parameter to cmdline.txt
+
+usbhid.quirks=0x2123:0x1010:0x0004 
+
+Add the following to /etc/udev/rules.d/99-input.rules
+
+ATTRS{idVendor}=="2123", ATTRS{idProduct}=="1010", SUBSYSTEMS=="usb", MODE="0666", OPTIONS=="ignore_device", GROUP="users"
+
+
+
